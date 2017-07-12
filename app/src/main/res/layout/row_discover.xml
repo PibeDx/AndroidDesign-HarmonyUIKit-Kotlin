@@ -57,7 +57,7 @@
 
             <RatingBar
                 android:id="@+id/rbaPoint"
-                style="@style/Widget.AppCompat.RatingBar.Small"
+                style="@style/RowDiscover.RatingBarSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"

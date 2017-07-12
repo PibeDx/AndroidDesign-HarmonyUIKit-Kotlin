@@ -4,4 +4,17 @@
     <string name="row_discover_tvi_point_row">4.2/5.0</string>
     <string name="row_discover_tvi_distance_row">1.3 KM NEARBY</string>
     <string name="row_discover_ivi_discover_row_description">discover image</string>
+
+    <color name="row_discover_ratingbar_start_background">#DAD9E3</color>
+    <color name="row_discover_ratingbar_start_secondary_progress">#F18939</color>
+    <color name="row_discover_ratingbar_start_progress">#F18939</color>
+
+    <style name="RowDiscover.RatingBarSmall" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="android:progressDrawable">@drawable/abc_ratingbar_small_material</item>
+        <item name="android:indeterminateDrawable">@drawable/abc_ratingbar_small_material</item>
+        <item name="android:minHeight">12dp</item>
+        <item name="android:maxHeight">12dp</item>
+        <item name="android:isIndicator">false</item>
+        <item name="android:thumb">@null</item>
+    </style>
 </resources>
