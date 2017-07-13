@@ -6,8 +6,12 @@
     <string name="row_discover_ivi_discover_row_description">discover image</string>
 
     <color name="row_discover_ratingbar_start_background">#DAD9E3</color>
-    <color name="row_discover_ratingbar_start_secondary_progress">#F18939</color>
-    <color name="row_discover_ratingbar_start_progress">#F18939</color>
+    <color name="row_discover_ratingbar_start_secondary_progress">#00CB9D</color>
+    <color name="row_discover_ratingbar_start_progress">#00CB9D</color>
+
+    <style name="RowDiscover.Theme" parent="AppTheme">
+        <item name="colorAccent">@color/row_discover_ratingbar_start_progress</item>
+    </style>
 
     <style name="RowDiscover.RatingBarSmall" parent="Widget.AppCompat.RatingBar.Small">
         <item name="android:progressDrawable">@drawable/abc_ratingbar_small_material</item>
