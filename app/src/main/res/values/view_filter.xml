@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="view_filter_ratingbar_start_background">#DAD9E3</color>
+    <color name="view_filter_ratingbar_start_secondary_progress">#5F5D70</color>
+    <color name="view_filter_ratingbar_start_progress">#5F5D70</color>
+
+    <style name="ViewFilter.Theme" parent="AppTheme">
+        <item name="colorAccent">@color/view_filter_ratingbar_start_progress</item>
+    </style>
+
+    <style name="ViewFilter.RatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/abc_ratingbar_material</item>
+        <item name="android:indeterminateDrawable">@drawable/abc_ratingbar_material</item>
+        <item name="android:minHeight">34dp</item>
+        <item name="android:maxHeight">34dp</item>
+        <item name="android:isIndicator">false</item>
+        <item name="android:thumb">@null</item>
+    </style>
+</resources>

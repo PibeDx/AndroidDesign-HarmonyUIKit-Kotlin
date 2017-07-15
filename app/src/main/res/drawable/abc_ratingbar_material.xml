@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <bitmap
+            android:src="@drawable/ic_ratingbar_off"
+            android:tint="?attr/colorControlNormal"
+            android:alpha="0.3" />
+    </item>
+    <item android:id="@android:id/secondaryProgress">
+        <bitmap
+            android:src="@drawable/ic_ratingbar_off"
+            android:tint="?attr/colorControlActivated" />
+    </item>
+    <item android:id="@android:id/progress">
+        <bitmap
+            android:src="@drawable/ic_ratingbar_on"
+            android:tint="?attr/colorControlActivated"
+            android:tileModeX="repeat" />
+    </item>
+</layer-list>
