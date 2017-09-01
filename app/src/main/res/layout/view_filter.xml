@@ -13,7 +13,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
@@ -23,13 +23,15 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <View
-        android:id="@+id/view2"
+    <com.josecuentas.androiddesign_harmony_ui_kit_kotlin.widget.CustomSeekbar
+        android:id="@+id/seekBar"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="wrap_content"
+        android:thumb="@mipmap/bg_seekbar_thumb"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
+        android:max="100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -45,7 +47,7 @@
         android:text="What you're up to?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
         />
 
     <HorizontalScrollView

@@ -5,6 +5,8 @@
     <color name="view_filter_ratingbar_start_secondary_progress">#5F5D70</color>
     <color name="view_filter_ratingbar_start_progress">#5F5D70</color>
 
+    <dimen name="seekbar_thumb_text_size">12sp</dimen>
+
     <style name="ViewFilter.Theme" parent="AppTheme">
         <item name="colorAccent">@color/view_filter_ratingbar_start_progress</item>
     </style>
@@ -17,4 +19,6 @@
         <item name="android:isIndicator">false</item>
         <item name="android:thumb">@null</item>
     </style>
+
+    <style name="asd" parent="Base.Widget.AppCompat.SeekBar"></style>
 </resources>
