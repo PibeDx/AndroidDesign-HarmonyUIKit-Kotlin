@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun events() {
         seekBar.thumbOffset = dpToPx(9)
-        seekBar.setPadding(0,0,0,0)
+        seekBar.setPadding(dpToPx(9),0,dpToPx(9),0)
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {

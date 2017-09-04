@@ -25,9 +25,10 @@
 
     <com.josecuentas.androiddesign_harmony_ui_kit_kotlin.widget.CustomSeekbar
         android:id="@+id/seekBar"
+        style="@style/ViewFilter.Seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:thumb="@mipmap/bg_seekbar_thumb"
+        android:splitTrack="false"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"

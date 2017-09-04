@@ -34,8 +34,8 @@ class CustomSeekbar : AppCompatSeekBar {
 
         paint.setColor(Color.BLACK)
         paint.setTextSize(resources.getDimension(R.dimen.seekbar_thumb_text_size))
-        //paint.textAlign = Paint.Align.CENTER
-        canvas!!.drawText("0",
+        paint.textAlign = Paint.Align.CENTER
+        canvas!!.drawText(this.progress.toString(),
                 thumbX/* + paint.measureText(this.progress.toString())/2*/,
                 thumbY,
                 paint)
