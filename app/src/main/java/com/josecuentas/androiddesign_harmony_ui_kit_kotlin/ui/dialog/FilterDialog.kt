@@ -59,6 +59,7 @@ class FilterDialog : DialogFragment() {
     }
 
     override fun setupDialog(dialog: Dialog?, style: Int) {
+        dialog!!.window.attributes.windowAnimations = R.style.AnimationDialogTop
         super.setupDialog(dialog, STYLE_NO_TITLE)
     }
 
@@ -69,6 +70,7 @@ class FilterDialog : DialogFragment() {
         attributes.width = WindowManager.LayoutParams.MATCH_PARENT
         dialog.window.attributes = attributes
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
     }
 
     protected fun dpToPx(dp: Int): Int {
