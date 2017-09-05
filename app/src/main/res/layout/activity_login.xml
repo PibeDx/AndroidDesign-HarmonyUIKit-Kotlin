@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context="com.josecuentas.androiddesign_harmony_ui_kit_kotlin.LoginActivity"
+    >
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iviLogo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="70dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_logo"
+        />
+
+    <TextView
+        android:id="@+id/labelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Harmony UI Kit"
+        android:textColor="#5F5D70"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iviLogo"
+        />
+
+    <EditText
+        android:id="@+id/eteEmail"
+        android:layout_width="315dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/bg_edittext_green_light"
+        android:hint="Email address"
+        android:paddingLeft="50dp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelName"
+        />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/eteEmail"
+        app:layout_constraintLeft_toLeftOf="@+id/eteEmail"
+        app:layout_constraintTop_toTopOf="@+id/eteEmail"
+        app:srcCompat="@drawable/ic_email"
+        />
+
+    <EditText
+        android:id="@+id/etePassword"
+        android:layout_width="315dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_edittext_green_light"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eteEmail"
+        />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/etePassword"
+        app:layout_constraintLeft_toLeftOf="@+id/etePassword"
+        app:layout_constraintTop_toTopOf="@+id/etePassword"
+        app:srcCompat="@drawable/ic_password"
+        />
+
+    <Button
+        android:id="@+id/butLogin"
+        android:layout_width="280dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button_gray"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etePassword"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Not a member yet?"
+        android:textColor="#9B99A9"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/tviRegister"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tviRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="Register"
+        android:textAlignment="center"
+        android:textColor="#00CB9D"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+</android.support.constraint.ConstraintLayout>
