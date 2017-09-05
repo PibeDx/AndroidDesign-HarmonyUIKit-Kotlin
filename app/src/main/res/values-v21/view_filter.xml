@@ -22,5 +22,6 @@
 
     <style name="ViewFilter.Seekbar" parent="Base.Widget.AppCompat.SeekBar">
         <item name="android:thumb">@drawable/abc_seekbar_thumb_material2</item>
+        <item name="android:splitTrack">false</item>
     </style>
 </resources>
