@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+    >
+
+    <View
+        android:id="@+id/vKitkat"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="#FFFFFF"
+        android:visibility="gone"
+        />
+
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        android:elevation="8dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/tviToolbarCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="Cancel"
+                android:textColor="#5F5D70"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/tviTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Filters"
+                android:textColor="#35343D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tviToolbarSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="Save"
+                android:textColor="#00CB9D"
+                android:textSize="16sp"
+                />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+</LinearLayout>
