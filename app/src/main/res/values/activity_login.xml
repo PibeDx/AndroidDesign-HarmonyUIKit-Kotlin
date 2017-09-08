@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="log_in_color_control">#5F5D70</color>
+
+    <style name="LogIn.Theme" parent="AppTheme">
+        <item name="colorControlNormal">@color/log_in_color_control</item>
+        <item name="colorControlActivated">@color/log_in_color_control</item>
+    </style>
+
+    <style name="LogIn.Button" parent="Base.Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_button_gray</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LogIn.EditText" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_edittext_green_light</item>
+        <item name="android:textColor">#5F5D70</item>
+        <item name="android:textColorHint">#9e9da4</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

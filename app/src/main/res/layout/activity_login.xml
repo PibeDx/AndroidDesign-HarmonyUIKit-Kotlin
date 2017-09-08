@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:theme="@style/LogIn.Theme"
     tools:context="com.josecuentas.androiddesign_harmony_ui_kit_kotlin.LoginActivity"
     >
 
@@ -37,13 +38,13 @@
 
     <EditText
         android:id="@+id/eteEmail"
+        style="@style/LogIn.EditText"
         android:layout_width="315dp"
         android:layout_height="64dp"
         android:layout_marginTop="92dp"
-        android:background="@drawable/bg_edittext_green_light"
         android:hint="Email address"
-        android:paddingLeft="50dp"
         android:inputType="textEmailAddress"
+        android:paddingLeft="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelName"
@@ -63,10 +64,10 @@
 
     <EditText
         android:id="@+id/etePassword"
+        style="@style/LogIn.EditText"
         android:layout_width="315dp"
         android:layout_height="64dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/bg_edittext_green_light"
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingLeft="50dp"
@@ -89,14 +90,11 @@
 
     <Button
         android:id="@+id/butLogin"
+        style="@style/LogIn.Button"
         android:layout_width="280dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bg_button_gray"
         android:text="Login"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp"
-        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etePassword"
