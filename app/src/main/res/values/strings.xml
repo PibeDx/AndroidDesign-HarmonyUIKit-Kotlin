@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidDesign-Harmony-UI-Kit-Kotlin</string>
+    <string name="login_username_empty">Username is empty</string>
+    <string name="login_password_empty">Password is empty</string>
 </resources>

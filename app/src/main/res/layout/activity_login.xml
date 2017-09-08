@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:theme="@style/LogIn.Theme"
-    tools:context="com.josecuentas.androiddesign_harmony_ui_kit_kotlin.LoginActivity"
+    tools:context="com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.login.LoginActivity"
     >
 
     <android.support.v7.widget.AppCompatImageView
