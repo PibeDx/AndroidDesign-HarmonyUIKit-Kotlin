@@ -5,15 +5,10 @@ package com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.login
  */
 interface LoginContract {
     interface View {
-//        fun showLoginMessageError(message: String)
         fun showUserNameEmpty()
-//        fun showUserNameNotFoundError()
-//        fun showUserNameInvalidate()
         fun showPasswordEmpty()
-//        fun showPasswordInvalidate()
-//        fun showLoginEmailNotValidateError()
-//        fun showLoginError()
         fun goMain()
+        fun showLoginError()
     }
 
     interface Listener {

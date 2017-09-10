@@ -1,9 +1,11 @@
 package com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.login
 
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.data.local.UserRepository
+
 /**
  * Created by jcuentas on 8/09/17.
  */
-class LoginPresenter(val view: LoginContract.View) : LoginContract.Listener {
+class LoginPresenter(val view: LoginContract.View, val userRepository: UserRepository) : LoginContract.Listener {
 
     override fun login(username: String, password: String) {
         // validation form
@@ -15,8 +17,12 @@ class LoginPresenter(val view: LoginContract.View) : LoginContract.Listener {
             view.showPasswordEmpty()
             return
         }
-        view.goMain()
+
+        val user = userRepository.get(username)
+        if (user != null) {
+            view.goMain()
+        } else {
+            view.showLoginError()
+        }
     }
-
-
 }

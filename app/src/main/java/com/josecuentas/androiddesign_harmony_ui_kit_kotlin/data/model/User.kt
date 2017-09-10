@@ -30,7 +30,6 @@ data class User(val userId: String, val username: String, val name: String, val 
         try {
             var line = reader.readLine()
             while (line != null) {
-                line = reader.readLine()
                 if (line.startsWith(USER_ID_PREFIX)){
                     userId = line.substring(USER_ID_PREFIX.length)
                 }
@@ -46,6 +45,7 @@ data class User(val userId: String, val username: String, val name: String, val 
                 if (line.startsWith(LASTNAME_PREFIX)) {
                     lastname = line.substring(LASTNAME_PREFIX.length)
                 }
+                line = reader.readLine()
             }
         } catch (e: IOException) {
             return null

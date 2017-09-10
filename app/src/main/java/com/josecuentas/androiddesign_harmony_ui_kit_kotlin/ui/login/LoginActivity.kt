@@ -6,17 +6,16 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.MainActivity
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.R
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.data.local.UserStore
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
-
-    //lateinit var presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val presenter = LoginPresenter(this)
+        val presenter = LoginPresenter(this, UserStore(this, "login"))
 
         //When button login is clicked
         butLogin.setOnClickListener {
@@ -32,6 +31,10 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
 
     override fun showPasswordEmpty() {
         Toast.makeText(this, R.string.login_password_empty, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showLoginError() {
+        Toast.makeText(this, R.string.login_error, Toast.LENGTH_SHORT).show()
     }
 
     override fun goMain() {
