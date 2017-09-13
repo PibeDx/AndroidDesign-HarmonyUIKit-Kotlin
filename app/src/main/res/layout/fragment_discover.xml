@@ -21,28 +21,15 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/row_discover"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rviDiscover"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@+id/claNavigationBottom"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar1"
-        />
-
-    <include
-        android:id="@+id/include2"
-        layout="@layout/row_discover"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include"
         />
 
     <include
@@ -55,14 +42,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
-
-    <!--<include
-        layout="@layout/view_filter"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />-->
 
 </android.support.constraint.ConstraintLayout>

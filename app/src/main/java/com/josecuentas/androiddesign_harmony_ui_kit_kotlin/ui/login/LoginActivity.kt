@@ -7,9 +7,9 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
-import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.MainActivity
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.R
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.data.local.UserStore
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dashboard.DashboardActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
@@ -78,6 +78,6 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun goMain() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, DashboardActivity::class.java))
     }
 }
