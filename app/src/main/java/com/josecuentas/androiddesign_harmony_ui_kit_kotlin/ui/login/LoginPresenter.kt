@@ -65,8 +65,7 @@ class LoginPresenter(val userRepository: UserRepository,
     }
 
     fun cancelAll() {
-        this.runnableList.forEach {
-            this.handler.removeCallbacks(it)
-        }
+        this.runnableList.forEach { this.handler.removeCallbacks(it) }
+        this.runnableList.clear()
     }
 }

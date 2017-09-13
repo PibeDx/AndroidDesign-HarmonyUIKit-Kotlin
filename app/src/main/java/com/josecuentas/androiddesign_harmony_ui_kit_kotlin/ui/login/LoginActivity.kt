@@ -20,7 +20,6 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         injectPresenter()
-        setupUi()
         events()
     }
 
@@ -45,6 +44,11 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     private fun injectPresenter() {
         presenter = LoginPresenter(UserStore(this, "login"), LoginValidation(this))
         presenter.attached(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setupUi()
     }
 
     override fun onDestroy() {
