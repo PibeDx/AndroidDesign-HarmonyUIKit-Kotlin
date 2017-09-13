@@ -3,6 +3,7 @@ package com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.login
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Toast
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.MainActivity
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.R
@@ -11,12 +12,16 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
 
+    lateinit var presenter: LoginPresenter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        injectPresenter()
+        events()
+    }
 
-        val presenter = LoginPresenter(this, UserStore(this, "login"))
-
+    private fun events() {
         //When button login is clicked
         butLogin.setOnClickListener {
             val username = eteEmail.text.toString()
@@ -25,19 +30,42 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         }
     }
 
-    override fun showUserNameEmpty() {
-        Toast.makeText(this, R.string.login_username_empty, Toast.LENGTH_SHORT).show()
+    private fun injectPresenter() {
+        presenter = LoginPresenter(UserStore(this, "login"), LoginValidation(this))
+        presenter.attached(this)
     }
 
-    override fun showPasswordEmpty() {
-        Toast.makeText(this, R.string.login_password_empty, Toast.LENGTH_SHORT).show()
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.destroyed()
+        presenter.cancelAll()
     }
 
-    override fun showLoginError() {
-        Toast.makeText(this, R.string.login_error, Toast.LENGTH_SHORT).show()
+    override fun showLoginLoading() {
+        pbaLogInLoading.visibility = View.VISIBLE
+    }
+
+    override fun hideLoginLoading() {
+        pbaLogInLoading.visibility = View.GONE
+    }
+
+    override fun disableFormLogin() {
+        eteEmail.isEnabled = false
+        etePassword.isEnabled = false
+        butLogin.isEnabled = false
+    }
+
+    override fun enableFormLogin() {
+        eteEmail.isEnabled = true
+        etePassword.isEnabled = true
+        butLogin.isEnabled = true
+    }
+
+    override fun showLoginErrorMessage() {
+        Toast.makeText(this, R.string.error_login, Toast.LENGTH_SHORT).show()
     }
 
     override fun goMain() {
-        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
     }
 }
