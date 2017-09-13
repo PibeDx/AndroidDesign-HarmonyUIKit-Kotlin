@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="discover_toolbar_title">Discover</string>
+
+    <color name="discover_progress">#35343D</color>
+    <color name="discover_color_control">#35343D</color>
+
+    <style name="Discover.Theme" parent="AppTheme.NoActionBar">
+        <item name="colorPrimaryDark">#35343D</item>
+        <item name="colorControlNormal">@color/discover_color_control</item>
+        <item name="colorControlActivated">@color/discover_color_control</item>
+    </style>
+</resources>
