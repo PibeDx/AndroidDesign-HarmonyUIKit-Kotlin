@@ -8,7 +8,7 @@ import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.data.local.UserReposi
  */
 class LoginPresenter(val userRepository: UserRepository,
                      val validation: LoginContract.Validation) : LoginContract.Presenter {
-    private val DELAY_MILLIS = 5000L
+    private val DELAY_MILLIS = 1500L
     private var view: LoginContract.View? = null
     private val runnableList: MutableList<Runnable> = ArrayList()
     private val handler: Handler = Handler()

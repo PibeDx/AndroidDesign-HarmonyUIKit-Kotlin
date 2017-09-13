@@ -2,6 +2,7 @@
 <resources>
 
     <color name="log_in_color_control">#5F5D70</color>
+    <color name="log_in_progress">#00CB9D</color>
 
     <style name="LogIn.Theme" parent="AppTheme">
         <item name="colorControlNormal">@color/log_in_color_control</item>

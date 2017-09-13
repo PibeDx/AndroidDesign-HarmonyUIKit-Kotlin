@@ -1,7 +1,9 @@
 package com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.login
 
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
@@ -18,7 +20,17 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         injectPresenter()
+        setupUi()
         events()
+    }
+
+    private fun setupUi() {
+        //region change color progressbar
+        pbaLogInLoading.indeterminateDrawable.setColorFilter(
+                ContextCompat.getColor(this, R.color.log_in_progress),
+                PorterDuff.Mode.SRC_IN
+        )
+        //endregion
     }
 
     private fun events() {
