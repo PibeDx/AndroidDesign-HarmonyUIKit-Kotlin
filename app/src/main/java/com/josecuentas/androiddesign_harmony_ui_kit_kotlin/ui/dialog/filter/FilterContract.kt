@@ -12,12 +12,15 @@ interface FilterContract {
         fun setDistance(distance: Int)
         fun setCategorys(list: List<Category>)
         fun setRating(rating: Int)
+
         fun showRatingVeryBad()
         fun showRatingBad()
         fun showRatingNoBad()
         fun showRatingNice()
         fun showRatingExcellent()
         fun showRatingEmpty()
+
+        fun onFilter(distance: Int, progress: Int, categoriList: MutableList<Category>)
     }
 
     interface Listener {
@@ -28,7 +31,7 @@ interface FilterContract {
     }
 
     interface Presenter :IPresenter<View> {
-        fun filter(list: List<Any>)
+        fun filter()
     }
 
 }

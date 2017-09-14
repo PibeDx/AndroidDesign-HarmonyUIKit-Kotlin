@@ -9,12 +9,12 @@ import android.support.v4.app.DialogFragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.AppCompatImageButton
 import android.view.*
-import android.widget.RatingBar
 import android.widget.SeekBar
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.R
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Category
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.setBackgroundStateList
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.setDrawableTintList
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dashboard.discover.DiscoverListener
 import kotlinx.android.synthetic.main.toolbar_dialog_filter.*
 import kotlinx.android.synthetic.main.view_filter.*
 
@@ -24,10 +24,11 @@ import kotlinx.android.synthetic.main.view_filter.*
 class FilterDialog : DialogFragment(), FilterContract.View {
 
     val presenter: FilterPresenter by lazy { FilterPresenter() } //singleton
+    lateinit var discoverListener: DiscoverListener
     private var isLoadArgument = false
 
     companion object {
-        fun newInstance(distance: Int, rating: Int, list: List<Any>): FilterDialog{
+        fun newInstance(distance: Int, rating: Int): FilterDialog {
             val filterDialog = FilterDialog()
             val bundle = Bundle()
             bundle.putInt("distance", distance)
@@ -36,6 +37,10 @@ class FilterDialog : DialogFragment(), FilterContract.View {
             filterDialog.arguments = bundle
             return filterDialog
         }
+    }
+
+    fun setOnAttach(discoverListener: DiscoverListener) {
+        this.discoverListener = discoverListener
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -81,7 +86,10 @@ class FilterDialog : DialogFragment(), FilterContract.View {
 
     private fun events() {
         tviToolbarCancel.setOnClickListener { dismiss() }
-        tviToolbarSave.setOnClickListener { dismiss() }
+        tviToolbarSave.setOnClickListener {
+            dismiss()
+            presenter.filter()
+        }
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
@@ -93,7 +101,8 @@ class FilterDialog : DialogFragment(), FilterContract.View {
         })
 
         ratingBar.setOnRatingBarChangeListener({
-            ratingBar, fl, b -> presenter.onChangeRating(fl.toInt())
+            ratingBar, fl, b ->
+            presenter.onChangeRating(fl.toInt())
         })
 
 
@@ -116,7 +125,7 @@ class FilterDialog : DialogFragment(), FilterContract.View {
 
     private fun ui() {
         seekBar.thumbOffset = dpToPx(9)
-        seekBar.setPadding(dpToPx(9),0,dpToPx(9),0)
+        seekBar.setPadding(dpToPx(9), 0, dpToPx(9), 0)
         uiFilter()
     }
 
@@ -183,6 +192,10 @@ class FilterDialog : DialogFragment(), FilterContract.View {
         tviRating.text = ""
     }
 
+    override fun onFilter(distance: Int, progress: Int, categoriList: MutableList<Category>) {
+        discoverListener.filter(distance, progress, categoriList)
+    }
+
     override fun setupDialog(dialog: Dialog?, style: Int) {
         dialog!!.window.attributes.windowAnimations = R.style.AnimationDialogTop
         super.setupDialog(dialog, STYLE_NO_TITLE)
@@ -195,7 +208,11 @@ class FilterDialog : DialogFragment(), FilterContract.View {
         attributes.width = WindowManager.LayoutParams.MATCH_PARENT
         dialog.window.attributes = attributes
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.destroyed()
     }
 
     protected fun dpToPx(dp: Int): Int {

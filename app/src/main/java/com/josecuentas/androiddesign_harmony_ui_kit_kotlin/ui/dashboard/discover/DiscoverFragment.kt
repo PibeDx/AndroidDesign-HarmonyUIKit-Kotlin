@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.R
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Category
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Discover
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.adapter.DiscoverAdapter
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dialog.filter.FilterDialog
@@ -19,12 +20,12 @@ import kotlinx.android.synthetic.main.toolbar_dashboard.*
 /**
  * Created by jcuentas on 13/09/17.
  */
-class DiscoverFragment : Fragment(), DiscoverContract.View {
+class DiscoverFragment : Fragment(), DiscoverContract.View, DiscoverListener {
 
     lateinit var discoverAdapter: DiscoverAdapter
     lateinit var presenter: DiscoverPresenter
     private val filterDialog: FilterDialog
-            by lazy { FilterDialog.newInstance(20, 5, ArrayList()) } //singleton
+            by lazy { FilterDialog.newInstance(20, 5) } //singleton
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = LayoutInflater.from(context).inflate(R.layout.fragment_discover, container, false)
@@ -37,6 +38,7 @@ class DiscoverFragment : Fragment(), DiscoverContract.View {
         setupAdapter()
         setupRecycler()
         events()
+        filterDialog.setOnAttach(this)
 
         presenter.getDiscovers()
     }
@@ -98,5 +100,9 @@ class DiscoverFragment : Fragment(), DiscoverContract.View {
 
     override fun showDiscoverError() {
         Toast.makeText(context, "showDiscoverError", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun filter(distance: Int, progress: Int, categoriList: MutableList<Category>) {
+        presenter.filter(distance, progress, categoriList)
     }
 }

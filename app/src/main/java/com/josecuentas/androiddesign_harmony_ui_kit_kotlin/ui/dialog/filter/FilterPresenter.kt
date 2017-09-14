@@ -40,10 +40,6 @@ class FilterPresenter : FilterContract.Presenter, FilterContract.Listener {
         this.view?.setCategorys(categoryList)
     }
 
-    override fun filter(list: List<Any>) {
-
-    }
-
     override fun onChangeRating(rating: Int) {
         this.rating = rating
         when(this.rating) {
@@ -54,6 +50,10 @@ class FilterPresenter : FilterContract.Presenter, FilterContract.Listener {
             5 -> this.view?.showRatingExcellent()
             else -> this.view?.showRatingEmpty()
         }
+    }
+
+    override fun filter() {
+        this.view?.onFilter(distance, rating, categoryList)
     }
 
     override fun onChangeDistance(distance: Int) {

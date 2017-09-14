@@ -1,5 +1,6 @@
 package com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dashboard.discover
 
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Category
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Discover
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.IPresenter
 
@@ -17,5 +18,6 @@ interface DiscoverContract {
 
     interface Presenter : IPresenter<View> {
         fun getDiscovers()
+        fun filter(distance: Int, progress: Int, categoriList: MutableList<Category>)
     }
 }
