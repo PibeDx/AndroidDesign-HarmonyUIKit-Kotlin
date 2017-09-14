@@ -12,7 +12,7 @@ import android.widget.Toast
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.R
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Discover
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.adapter.DiscoverAdapter
-import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dialog.FilterDialog
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dialog.filter.FilterDialog
 import kotlinx.android.synthetic.main.fragment_discover.*
 import kotlinx.android.synthetic.main.toolbar_dashboard.*
 
@@ -23,6 +23,8 @@ class DiscoverFragment : Fragment(), DiscoverContract.View {
 
     lateinit var discoverAdapter: DiscoverAdapter
     lateinit var presenter: DiscoverPresenter
+    private val filterDialog: FilterDialog
+            by lazy { FilterDialog.newInstance(20, 5, ArrayList()) } //singleton
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = LayoutInflater.from(context).inflate(R.layout.fragment_discover, container, false)
@@ -51,7 +53,7 @@ class DiscoverFragment : Fragment(), DiscoverContract.View {
 
     private fun events() {
         iviFilter.setOnClickListener {
-            FilterDialog().show(fragmentManager, "filterDialog")
+            filterDialog.show(fragmentManager, "filterDialog")
         }
     }
 
