@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.AppCompatImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iviRowCategory"
+    android:layout_width="46dp"
+    android:layout_height="46dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginEnd="8dp"
+    android:adjustViewBounds="true"
+    android:background="@drawable/bg_stroke_gray"
+    android:scaleType="centerInside"
+    android:src="@drawable/ic_hiking"
+    />

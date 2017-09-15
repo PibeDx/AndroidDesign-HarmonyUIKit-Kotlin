@@ -1,5 +1,6 @@
 package com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dashboard.discover
 
+import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -13,6 +14,7 @@ import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.R
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Category
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Discover
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.adapter.DiscoverAdapter
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dashboard.discover.detail.DiscoverDetailActivity
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dialog.filter.FilterDialog
 import kotlinx.android.synthetic.main.fragment_discover.*
 import kotlinx.android.synthetic.main.toolbar_dashboard.*
@@ -20,7 +22,7 @@ import kotlinx.android.synthetic.main.toolbar_dashboard.*
 /**
  * Created by jcuentas on 13/09/17.
  */
-class DiscoverFragment : Fragment(), DiscoverContract.View, DiscoverListener {
+class DiscoverFragment : Fragment(), DiscoverContract.View, DiscoverListener, DiscoverAdapter.DiscoverAdapterListener {
 
     lateinit var discoverAdapter: DiscoverAdapter
     lateinit var presenter: DiscoverPresenter
@@ -70,7 +72,7 @@ class DiscoverFragment : Fragment(), DiscoverContract.View, DiscoverListener {
     }
 
     private fun setupAdapter() {
-        this.discoverAdapter = DiscoverAdapter()
+        this.discoverAdapter = DiscoverAdapter(this)
     }
 
     private fun setupRecycler() {
@@ -104,5 +106,13 @@ class DiscoverFragment : Fragment(), DiscoverContract.View, DiscoverListener {
 
     override fun filter(distance: Int, progress: Int, categoriList: MutableList<Category>) {
         presenter.filter(distance, progress, categoriList)
+    }
+
+    override fun onDiscoverDetail(discover: Discover) {
+        val bundle: Bundle = Bundle()
+        bundle.putSerializable(Discover.BUNDLE, discover)
+        val intent = Intent(context, DiscoverDetailActivity::class.java)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 }

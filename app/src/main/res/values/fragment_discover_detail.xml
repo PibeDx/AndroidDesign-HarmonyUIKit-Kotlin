@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DiscoverDetail.Theme" parent="AppTheme">
+        <item name="colorAccent">@color/row_discover_ratingbar_start_progress</item>
+    </style>
+
+    <style name="DiscoverDetail.RatingBarSmall" parent="RowDiscover.RatingBarSmall">
+        <item name="android:isIndicator">true</item>
+    </style>
+
+</resources>

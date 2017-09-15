@@ -1,0 +1,168 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:theme="@style/DiscoverDetail.Theme"
+    tools:context="com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dashboard.discover.detail.DiscoverDetailFragment"
+    >
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iviMap"
+        android:layout_width="0dp"
+        android:layout_height="336dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_map_dummy"
+        />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="86dp"
+        android:background="@drawable/bg_gradient_white"
+        android:rotation="180"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <include
+        layout="@layout/toolbar_discover_detail"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="86dp"
+        android:background="@drawable/bg_gradient_white"
+        app:layout_constraintBottom_toBottomOf="@+id/iviMap"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iviMap"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/space"
+        >
+
+        <TextView
+            android:id="@+id/tviTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Great place for a picnic!"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <android.support.v7.widget.AppCompatRatingBar
+            android:id="@+id/rbaPoint"
+            style="@style/DiscoverDetail.RatingBarSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:numStars="5"
+            android:rating="2"
+            android:stepSize="1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tviTitle"
+            />
+
+        <TextView
+            android:id="@+id/tviPointRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/row_discover_tvi_point_row"
+            android:textColor="#B2B1C0"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/rbaPoint"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rbaPoint"
+            app:layout_constraintTop_toTopOf="@+id/rbaPoint"
+            />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_circle"
+            app:layout_constraintBottom_toBottomOf="@+id/tviPointRow"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tviPointRow"
+            app:layout_constraintTop_toTopOf="@+id/tviPointRow"
+            />
+
+        <TextView
+            android:id="@+id/tviDistanceRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/row_discover_tvi_distance_row"
+            android:textColor="#B2B1C0"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tviPointRow"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/tviPointRow"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rviCategory"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:overScrollMode="never"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tviDistanceRow"
+            />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="153dp"
+            android:layout_marginTop="18dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:srcCompat="@mipmap/ic_image_preview_head"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rviCategory"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

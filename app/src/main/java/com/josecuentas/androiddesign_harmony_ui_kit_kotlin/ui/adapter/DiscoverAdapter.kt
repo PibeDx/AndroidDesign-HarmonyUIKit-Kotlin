@@ -18,9 +18,11 @@ class DiscoverAdapter : RecyclerView.Adapter<DiscoverAdapter.DiscoverViewHolder>
 
     private var discoverList: MutableList<Discover>? = null
     private lateinit var picasso: Picasso
+    private var discoverAdapterListener: DiscoverAdapterListener?
 
-    constructor() : super() {
+    constructor(discoverAdapterListener: DiscoverAdapterListener) : super() {
         discoverList = ArrayList()
+        this.discoverAdapterListener = discoverAdapterListener
     }
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView?) {
@@ -47,6 +49,9 @@ class DiscoverAdapter : RecyclerView.Adapter<DiscoverAdapter.DiscoverViewHolder>
             rbaPoint!!.rating = discover.point
             tviPointRow!!.text = "${discover.point}/5.0"
             tviDistanceRow!!.text = discover.distanceDescription
+            itemView.setOnClickListener {
+                discoverAdapterListener?.onDiscoverDetail(discover)
+            }
         }
     }
 
@@ -70,5 +75,9 @@ class DiscoverAdapter : RecyclerView.Adapter<DiscoverAdapter.DiscoverViewHolder>
             tviDistanceRow = itemView!!.findViewById(R.id.tviDistanceRow)
         }
 
+    }
+
+    interface DiscoverAdapterListener {
+        fun onDiscoverDetail(discover: Discover)
     }
 }

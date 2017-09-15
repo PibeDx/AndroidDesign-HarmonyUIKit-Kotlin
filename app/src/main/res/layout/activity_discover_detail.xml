@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fragment
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dashboard.discover.detail.DiscoverDetailFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.discover.detail.DiscoverDetailActivity"
+    tools:layout="@layout/fragment_discover_detail"
+    />

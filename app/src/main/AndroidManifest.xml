@@ -26,7 +26,8 @@
         </activity>
         <activity android:name=".FilterOptionActivity">
         </activity>
-
+        <activity android:name=".ui.dashboard.discover.detail.DiscoverDetailActivity">
+        </activity>
     </application>
 
 </manifest>
