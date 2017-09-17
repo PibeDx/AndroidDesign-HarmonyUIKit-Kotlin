@@ -1,73 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.design.widget.AppBarLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/llaToolbarDiscoverDetail"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_height="336dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     >
 
-    <android.support.v7.widget.Toolbar
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/toolbar"
+    <android.support.design.widget.CollapsingToolbarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#00FFFFFF"
-        android:contentInsetLeft="0dp"
-        android:contentInsetStart="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
+        android:layout_height="match_parent"
+        app:contentScrim="#FFFFFF"
+        app:expandedTitleMarginEnd="64dp"
+        app:expandedTitleMarginStart="48dp"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_collapseMode="parallax"
             >
-
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/iviToolbarBack"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
+            <!--android:fitsSystemWindows="true"-->
+            <ImageView
+                android:id="@+id/toolbarImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_arrow_back"
+                app:srcCompat="@mipmap/ic_map_dummy"
                 />
 
-            <TextView
-                android:id="@+id/tviTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Spot details"
-                android:textColor="#35343D"
-                android:textSize="16sp"
-                android:textStyle="bold"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/bg_gradient_white"
+                android:rotation="180"
                 />
 
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/iviToolbarFavorite"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/iviToolbarGo"
-                android:adjustViewBounds="true"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_favorite"
-                />
-
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/iviToolbarGo"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:adjustViewBounds="true"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_navigation"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_gradient_white"
                 />
 
         </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
-</LinearLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#00FFFFFF"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/iviToolbarBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_arrow_back"
+                    />
+
+                <TextView
+                    android:id="@+id/tviTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Spot details"
+                    android:textColor="#35343D"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/iviToolbarFavorite"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/iviToolbarGo"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_favorite"
+                    />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/iviToolbarGo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_navigation"
+                    />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+
+</android.support.design.widget.AppBarLayout>
