@@ -11,6 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.R
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Category
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.adapter.CategoryAdapter
 import kotlinx.android.synthetic.main.fragment_discover_detail.*
 import kotlinx.android.synthetic.main.toolbar_discover_detail.*
 
@@ -20,6 +22,7 @@ import kotlinx.android.synthetic.main.toolbar_discover_detail.*
  */
 class DiscoverDetailFragment : Fragment() {
 
+    val categoryAdapter = CategoryAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -35,18 +38,10 @@ class DiscoverDetailFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(context)
         linearLayoutManager.orientation = RecyclerView.HORIZONTAL
         rviCategory.layoutManager = linearLayoutManager
-        rviCategory.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-            override fun getItemCount(): Int = 5
+        rviCategory.adapter = categoryAdapter
 
-            override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
-
-            }
-
-            override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
-                val view = LayoutInflater.from(context).inflate(R.layout.row_category, parent, false)
-                return object : RecyclerView.ViewHolder(view) {}
-            }
-        }
+        categoryAdapter.categoryList = DiscoverDetailDummy.getCategorys() as MutableList<Category>
+        categoryAdapter.notifyDataSetChanged()
 
         val gridLayoutManager = GridLayoutManager(context, GridSpacesItemDecoration.SPAN_COUNT)
         gridLayoutManager.orientation = RecyclerView.VERTICAL
