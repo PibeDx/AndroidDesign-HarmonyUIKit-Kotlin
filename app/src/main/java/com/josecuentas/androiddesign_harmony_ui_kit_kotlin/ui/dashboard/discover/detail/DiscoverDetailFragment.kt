@@ -3,6 +3,7 @@ package com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.dashboard.discove
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -43,7 +44,55 @@ class DiscoverDetailFragment : Fragment() {
 
             override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
                 val view = LayoutInflater.from(context).inflate(R.layout.row_category, parent, false)
-                return object : RecyclerView.ViewHolder(view){}
+                return object : RecyclerView.ViewHolder(view) {}
+            }
+        }
+
+        val gridLayoutManager = GridLayoutManager(context, GridSpacesItemDecoration.SPAN_COUNT)
+        gridLayoutManager.orientation = RecyclerView.VERTICAL
+        gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                when (position) {
+                    0 -> return 4 //HEAD 4 SPAN_SIZE
+                    else -> return 1 //ITEM 1 SPAN_SIZE
+                }
+            }
+        }
+
+        rviCatalogo.layoutManager = gridLayoutManager
+        rviCatalogo.addItemDecoration(GridSpacesItemDecoration(5))
+        rviCatalogo.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+            val VIEW_TYPE_HEAD = 0
+            val VIEW_TYPE_PREVIEW = 1
+            val VIEW_TYPE_MORE = 2
+
+            override fun getItemCount(): Int = 5
+
+            override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
+
+            }
+
+            override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
+                if (viewType == VIEW_TYPE_HEAD) {
+                    val view = LayoutInflater.from(context).inflate(R.layout.row_photo_head, parent, false)
+                    return object : RecyclerView.ViewHolder(view) {}
+                } else if (viewType == VIEW_TYPE_PREVIEW) {
+                    val view = LayoutInflater.from(context).inflate(R.layout.row_photo_preview, parent, false)
+                    return object : RecyclerView.ViewHolder(view) {}
+                } else {
+                    val view = LayoutInflater.from(context).inflate(R.layout.row_photo_more, parent, false)
+                    return object : RecyclerView.ViewHolder(view) {}
+                }
+            }
+
+            override fun getItemViewType(position: Int): Int {
+                val lastItem = itemCount - 1
+                when (position) {
+                    0 -> return VIEW_TYPE_HEAD //head
+                    lastItem -> return VIEW_TYPE_MORE //more
+                    else -> return VIEW_TYPE_PREVIEW //preview
+                }
             }
         }
     }
