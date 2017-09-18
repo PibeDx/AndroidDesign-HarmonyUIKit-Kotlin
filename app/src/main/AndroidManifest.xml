@@ -24,9 +24,11 @@
             android:name=".ui.dashboard.DashboardActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".FilterOptionActivity">
+        <activity
+            android:name=".ui.dashboard.discover.detail.DiscoverDetailActivity"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ui.dashboard.discover.detail.DiscoverDetailActivity">
+        <activity android:name=".FilterOptionActivity">
         </activity>
     </application>
 

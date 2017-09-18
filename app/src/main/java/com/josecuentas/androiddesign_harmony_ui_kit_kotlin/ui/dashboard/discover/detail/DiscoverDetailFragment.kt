@@ -95,6 +95,21 @@ class DiscoverDetailFragment : Fragment() {
                 }
             }
         }
+
+        rviFriend.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        rviFriend.addItemDecoration(OverlapSpacesItemDecoration(-8))
+        rviFriend.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+            override fun getItemCount(): Int = 5
+
+            override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
+
+            }
+
+            override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
+                val view = LayoutInflater.from(context).inflate(R.layout.row_photo_friend, parent, false)
+                return object : RecyclerView.ViewHolder(view) {}
+            }
+        }
     }
 
     private fun events() {
