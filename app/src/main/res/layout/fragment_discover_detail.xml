@@ -15,132 +15,196 @@
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            >
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tviTitle"
-                android:layout_width="0dp"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/claContainer"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Great place for a picnic!"
-                android:textSize="20sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                >
 
-            <android.support.v7.widget.AppCompatRatingBar
-                android:id="@+id/rbaPoint"
-                style="@style/DiscoverDetail.RatingBarSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:numStars="5"
-                android:rating="2"
-                android:stepSize="1"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tviTitle"
-                />
+                <TextView
+                    android:id="@+id/tviTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Great place for a picnic!"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
 
-            <TextView
-                android:id="@+id/tviPointRow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:text="@string/row_discover_tvi_point_row"
-                android:textColor="#B2B1C0"
-                android:textSize="11sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/rbaPoint"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/rbaPoint"
-                app:layout_constraintTop_toTopOf="@+id/rbaPoint"
-                />
+                <android.support.v7.widget.AppCompatRatingBar
+                    android:id="@+id/rbaPoint"
+                    style="@style/DiscoverDetail.RatingBarSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:numStars="5"
+                    android:rating="2"
+                    android:stepSize="1"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tviTitle"
+                    />
 
-            <View
-                android:id="@+id/view"
-                android:layout_width="4dp"
-                android:layout_height="4dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/ic_circle"
-                app:layout_constraintBottom_toBottomOf="@+id/tviPointRow"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tviPointRow"
-                app:layout_constraintTop_toTopOf="@+id/tviPointRow"
-                />
+                <TextView
+                    android:id="@+id/tviPointRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/row_discover_tvi_point_row"
+                    android:textColor="#B2B1C0"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/rbaPoint"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rbaPoint"
+                    app:layout_constraintTop_toTopOf="@+id/rbaPoint"
+                    />
 
-            <TextView
-                android:id="@+id/tviDistanceRow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:text="@string/row_discover_tvi_distance_row"
-                android:textColor="#B2B1C0"
-                android:textSize="11sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/tviPointRow"
-                app:layout_constraintStart_toEndOf="@+id/view"
-                app:layout_constraintTop_toTopOf="@+id/tviPointRow"
-                />
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/ic_circle"
+                    app:layout_constraintBottom_toBottomOf="@+id/tviPointRow"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tviPointRow"
+                    app:layout_constraintTop_toTopOf="@+id/tviPointRow"
+                    />
+
+                <TextView
+                    android:id="@+id/tviDistanceRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/row_discover_tvi_distance_row"
+                    android:textColor="#B2B1C0"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tviPointRow"
+                    app:layout_constraintStart_toEndOf="@+id/view"
+                    app:layout_constraintTop_toTopOf="@+id/tviPointRow"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rviCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="24dp"
+                    android:overScrollMode="never"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tviDistanceRow"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rviCatalogo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rviCategory"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rviFriend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rviCatalogo"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:text="+82 MORE HAVE BEEN HERE"
+                    android:textColor="#5F5D70"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/rviFriend"
+                    app:layout_constraintLeft_toRightOf="@+id/rviFriend"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/rviFriend"
+                    />
+
+                <Button
+                    android:id="@+id/butCheckHere"
+                    android:layout_width="210dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_button_corners_green"
+                    android:text="CHECK IN HERE"
+                    android:textColor="#FFF"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rviFriend"
+                    />
+
+                <TextView
+                    android:id="@+id/tviRecommendations"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="17 recommendations"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/butCheckHere"
+                    />
+
+                <TextView
+                    android:id="@+id/tviSort"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Sort by: Date added"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tviRecommendations"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/rviCategory"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="24dp"
-                android:overScrollMode="never"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tviDistanceRow"
-                />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rviCatalogo"
+                android:id="@+id/rviRecommend"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rviCategory"
-                />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rviFriend"
-                android:layout_width="wrap_content"
-                android:layout_height="32dp"
                 android:layout_marginTop="16dp"
+                android:clipToPadding="false"
+                android:minHeight="182dp"
+                android:paddingBottom="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rviCatalogo"
-                app:layout_constraintHorizontal_bias="0.0"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:text="+82 MORE HAVE BEEN HERE"
-                android:textColor="#5F5D70"
-                android:textSize="11sp"
-                app:layout_constraintBottom_toBottomOf="@+id/rviFriend"
-                app:layout_constraintLeft_toRightOf="@+id/rviFriend"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/rviFriend"
+                app:layout_constraintTop_toBottomOf="@id/claContainer"
+                app:layout_constraintVertical_bias="1.0"
                 />
 
         </android.support.constraint.ConstraintLayout>

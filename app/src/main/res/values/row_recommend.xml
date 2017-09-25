@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="row_recommend_tvi_name_row">Victoria Banks</string>
+    <string name="row_recommend_tvi_point_row">4/5</string>
+    <string name="row_recommend_tvi_recommend_row">Wow! I didn’t know that there is such a cool spot so close to my home town! 👍You guys need to see that!</string>
+    <string name="row_recommend_tvi_favorite_count">2</string>
+    <string name="row_recommend_tvi_date_ago">2 HOURS AGO</string>
+
+
+    <color name="row_recommend_ratingbar_start_background">#DAD9E3</color>
+    <color name="row_recommend_ratingbar_start_secondary_progress">#00CB9D</color>
+    <color name="row_recommend_ratingbar_start_progress">#00CB9D</color>
+
+    <style name="RowRecommend.Theme" parent="AppTheme">
+        <item name="colorAccent">@color/row_recommend_ratingbar_start_progress</item>
+    </style>
+
+    <style name="RowRecommend.RatingBarSmall" parent="RowDiscover.RatingBarSmall">
+        <item name="android:isIndicator">true</item>
+    </style>
+</resources>

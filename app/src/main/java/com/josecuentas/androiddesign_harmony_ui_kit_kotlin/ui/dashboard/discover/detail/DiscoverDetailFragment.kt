@@ -12,7 +12,9 @@ import android.view.ViewGroup
 
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.R
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Category
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.domain.model.Recommend
 import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.adapter.CategoryAdapter
+import com.josecuentas.androiddesign_harmony_ui_kit_kotlin.ui.adapter.RecommendAdapter
 import kotlinx.android.synthetic.main.fragment_discover_detail.*
 import kotlinx.android.synthetic.main.toolbar_discover_detail.*
 
@@ -105,6 +107,14 @@ class DiscoverDetailFragment : Fragment() {
                 return object : RecyclerView.ViewHolder(view) {}
             }
         }
+
+        rviRecommend.layoutManager = LinearLayoutManager(context)
+
+
+        val recommendAdapter = RecommendAdapter()
+        recommendAdapter.setRecommendList(DiscoverDetailDummy.getRecommendList() as MutableList<Recommend>)
+        rviRecommend.isNestedScrollingEnabled = false
+        rviRecommend.adapter = recommendAdapter
     }
 
     private fun events() {

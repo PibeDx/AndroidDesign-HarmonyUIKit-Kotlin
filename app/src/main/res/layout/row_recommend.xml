@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="182dp"
+    >
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iviProfileRow"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="17dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_recommend_profile"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="21dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toRightOf="@id/iviProfileRow"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/tviNameRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/row_recommend_tvi_name_row"
+            android:textColor="#000"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <RatingBar
+            android:id="@+id/rbaPointRow"
+            style="@style/RowRecommend.RatingBarSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:numStars="5"
+            android:rating="2"
+            android:stepSize="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tviNameRow"
+            />
+
+        <TextView
+            android:id="@+id/tviPointRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginStart="6dp"
+            android:text="@string/row_recommend_tvi_point_row"
+            android:textColor="#9B99A9"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/rbaPointRow"
+            app:layout_constraintLeft_toRightOf="@id/rbaPointRow"
+            app:layout_constraintTop_toTopOf="@id/rbaPointRow"
+            />
+
+        <TextView
+            android:id="@+id/tviRecommendRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/row_recommend_tvi_recommend_row"
+            android:textColor="#716F81"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rbaPointRow"
+            />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iviFavoriteRow"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="14dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tviRecommendRow"
+            app:srcCompat="@drawable/ic_heart"
+            />
+
+        <TextView
+            android:id="@+id/tviFavoriteCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/row_recommend_tvi_favorite_count"
+            android:textColor="#9B99A9"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iviFavoriteRow"
+            app:layout_constraintLeft_toRightOf="@id/iviFavoriteRow"
+            app:layout_constraintTop_toTopOf="@id/iviFavoriteRow"
+            />
+
+        <TextView
+            android:id="@+id/tviDateAgo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/row_recommend_tvi_date_ago"
+            android:textColor="#9B99A9"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tviRecommendRow"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>
